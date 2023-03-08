@@ -3,6 +3,11 @@ from tkinter import *
 import random
 import sqlite3 
 import time
+import importlib
+
+def load_admin():
+    module = importlib.import_module('admin') # replace 'my_module' with the name of the module you want to load
+    # do something with the loaded module here
 
 def loginPage(logdata):
     sup.destroy()
@@ -134,9 +139,13 @@ def signUpPage():
     sp.configure(width = 10,height=2, activebackground = "#33B5E5", relief = FLAT)
     sp.place(relx=0.4,rely=0.8)
 
-    log = Button(sup_frame,text='Use existing Account',padx=5,pady=5,width=5,command = gotoLogin,bg="white",fg='blue')
-    log.configure(width = 16,height=1, activebackground = "#33B5E5", relief = FLAT)
-    log.place(relx=0.4,rely=0.9)
+    log1 = Button(sup_frame, text='Use existing Account', padx=5, pady=5, width=5, command=gotoLogin, bg="white", fg='blue')
+    log1.configure(width=16, height=1, activebackground="#33B5E5", relief=FLAT)
+    log1.place(relx=0.3, rely=0.9)
+
+    log2 = Button(sup_frame, text='Log In to Admin', padx=5, pady=5, width=5, command=load_admin, bg="white", fg='blue')
+    log2.configure(width=16, height=1, activebackground="#33B5E5", relief=FLAT)
+    log2.place(relx=0.6, rely=0.9)
 
     sup.mainloop()
 

@@ -7,6 +7,9 @@ from tkinter import messagebox
 conn = sqlite3.connect('database.db')
 cursor = conn.cursor()
 
+# Show a message to indicate that the question was saved
+messagebox.showinfo("Login", "Successfully loggen in!")
+
 # Create the questions table if it doesn't exist
 cursor.execute('''CREATE TABLE IF NOT EXISTS questions
                  (id INTEGER PRIMARY KEY,
