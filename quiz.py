@@ -334,7 +334,7 @@ def medium():
     # Load questions from database for easy difficulty
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
-    c.execute("SELECT question, choice1, choice2, choice3, choice4, answer FROM questions WHERE difficulty = 'medium'")
+    c.execute("SELECT question, choice1, choice2, choice3, choice4, answer FROM questions WHERE difficulty = 'Medium'")
     rows = c.fetchall()
 
     def countDown():
@@ -451,7 +451,7 @@ def difficult():
     # Load questions from database for easy difficulty
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
-    c.execute("SELECT question, choice1, choice2, choice3, choice4, answer FROM questions WHERE difficulty = 'hard'")
+    c.execute("SELECT question, choice1, choice2, choice3, choice4, answer FROM questions WHERE difficulty = 'Hard'")
     rows = c.fetchall()
 
     
